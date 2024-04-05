@@ -1,0 +1,45 @@
+﻿<Window x:Class="TeamManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TeamManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="AliceBlue">
+        <!--Container to hold the settings for all the columns in the grid-->
+        <Grid.ColumnDefinitions>
+            <!--Settings to define all the individual columns-->
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!--Container to hold the settings for all the rows in the grid-->
+        <Grid.RowDefinitions>
+            <!--Settings to define all the individual rows-->
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10" KeyDown="StackPanel_KeyDown" Tag="13">
+            <Label FontSize="15" Content="Team Name:"/>
+            <TextBox x:Name="txtTeam" FontSize="15" GotFocus="Form_GotFocus" />
+            <Label FontSize="15" Content="Primary Contact:"/>
+            <TextBox x:Name="txtPrimary" FontSize="15" GotFocus="Form_GotFocus"/>
+            <Label FontSize="15" Content="Contact Phone:"/>
+            <TextBox x:Name="txtPhone" FontSize="15" GotFocus="Form_GotFocus"/>
+            <Label FontSize="15" Content="Contact Email:"/>
+            <TextBox x:Name="txtEmail" FontSize="15" GotFocus="Form_GotFocus" />
+            <Label FontSize="15" Content="Competition Points:"/>
+            <TextBox x:Name="txtPoints" FontSize="15" GotFocus="Form_GotFocus" PreviewTextInput="txtPoints_PreviewTextInput"/>
+            <Button x:Name="btnClear" Padding="5" Click="btnClear_Click" Height="35" Width="122" Content="Clear Form" FontSize="14"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgvAddressTable" Grid.Column="1" Margin="10" IsReadOnly="True" SelectionChanged="dgvAddressTable_SelectionChanged"/>
+        <Button x:Name="btnSave"  Grid.Row="1" Margin="10,35,41,10" Click="btnSave_Click" Content="SAVE" FontSize="14" />
+        <Button x:Name="btnDelete" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="42,34,0,8" Padding="10" Click="btnDelete_Click" Width="91" FontSize="14">DELETE</Button>
+        <Button x:Name="btnExit" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,32,33,10" Padding="20,10" Click="btnExit_Click" Width="73" FontSize="14">EXIT</Button>
+        <Button x:Name="btnEdit" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,32,0,10" Padding="10" Click="btnEdit_Click" Width="86" FontSize="14">EDIT</Button>
+
+
+    </Grid>
+</Window>
